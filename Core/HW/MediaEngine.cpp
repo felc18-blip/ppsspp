@@ -433,7 +433,6 @@ bool MediaEngine::addVideoStream(int streamNum, int streamId) {
 #if LIBAVFORMAT_VERSION_MAJOR >= 59
 			avpriv_stream_set_need_parsing(stream, AVSTREAM_PARSE_FULL);
 #else
-			stream->request_probe = 0;
 			stream->need_parsing = AVSTREAM_PARSE_FULL;
 #endif
 			// We could set the width here, but we don't need to.
